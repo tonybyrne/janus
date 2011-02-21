@@ -121,7 +121,8 @@ def vim_plugin_task(name, repo=nil)
 end
 
 vim_plugin_task "ack.vim",          "git://github.com/mileszs/ack.vim.git"
-vim_plugin_task "acp.vim",          "https://github.com/vim-scripts/AutoComplPop.git"
+vim_plugin_task "acp.vim",          "git://github.com/tonybyrne/AutoComplPop.git"
+vim_plugin_task "bufexplorer",      "git://github.com/slack/vim-bufexplorer.git"
 vim_plugin_task "color-sampler",    "git://github.com/vim-scripts/Color-Sampler-Pack.git"
 vim_plugin_task "conque",           "http://conque.googlecode.com/files/conque_1.1.tar.gz"
 vim_plugin_task "fugitive",         "git://github.com/tpope/vim-fugitive.git"
