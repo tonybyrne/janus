@@ -125,6 +125,7 @@ vim_plugin_task "acp.vim",          "git://github.com/tonybyrne/AutoComplPop.git
 vim_plugin_task "bufexplorer",      "git://github.com/slack/vim-bufexplorer.git"
 vim_plugin_task "color-sampler",    "git://github.com/vim-scripts/Color-Sampler-Pack.git"
 vim_plugin_task "conque",           "http://conque.googlecode.com/files/conque_1.1.tar.gz"
+vim_plugin_task "dbext",            "git://github.com/zklinger/dbext.git"
 vim_plugin_task "fugitive",         "git://github.com/tpope/vim-fugitive.git"
 vim_plugin_task "git",              "git://github.com/tpope/vim-git.git"
 vim_plugin_task "haml",             "git://github.com/tpope/vim-haml.git"
