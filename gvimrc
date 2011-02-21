@@ -3,6 +3,9 @@ if has("gui_macvim")
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert
 
+  " Highlight Current Line
+  set cursorline
+
   " Command-T for CommandT
   macmenu &File.New\ Tab key=<D-T>
   map <D-t> :CommandT<CR>
