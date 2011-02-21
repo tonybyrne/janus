@@ -112,7 +112,7 @@ set modeline
 set modelines=10
 
 " Default color scheme
-color desert
+color vividchalk 
 
 " Directories for swp files
 set backupdir=~/.vim/backup
@@ -123,6 +123,16 @@ let g:JSLintHighlightErrorLine = 0
 
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1
+
+function CdProject(project)
+ call ChangeDirectory('/Users/tonyb/.vim_projects/' . a:project)
+endfunction
+
+command! -nargs=? -complete=file CdProject call CdProject(<q-args>)
+map <leader>p :CdProject<space>
+map <leader>a :A<CR>
+map <leader>r :R<CR>
+nnoremap <F5> :BufExplorer<CR>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))

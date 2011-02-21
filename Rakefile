@@ -121,6 +121,7 @@ def vim_plugin_task(name, repo=nil)
 end
 
 vim_plugin_task "ack.vim",          "git://github.com/mileszs/ack.vim.git"
+vim_plugin_task "acp.vim",          "https://github.com/vim-scripts/AutoComplPop.git"
 vim_plugin_task "color-sampler",    "git://github.com/vim-scripts/Color-Sampler-Pack.git"
 vim_plugin_task "conque",           "http://conque.googlecode.com/files/conque_1.1.tar.gz"
 vim_plugin_task "fugitive",         "git://github.com/tpope/vim-fugitive.git"
@@ -141,7 +142,7 @@ vim_plugin_task "textile",          "git://github.com/timcharper/textile.vim.git
 vim_plugin_task "rails",            "git://github.com/tpope/vim-rails.git"
 vim_plugin_task "rspec",            "git://github.com/taq/vim-rspec.git"
 vim_plugin_task "zoomwin",          "git://github.com/vim-scripts/ZoomWin.git"
-vim_plugin_task "snipmate",         "git://github.com/msanders/snipmate.vim.git"
+vim_plugin_task "snipmate",         "git://github.com/tonybyrne/snipmate.vim.git"
 vim_plugin_task "markdown",         "git://github.com/tpope/vim-markdown.git"
 vim_plugin_task "align",            "git://github.com/tsaleh/vim-align.git"
 vim_plugin_task "unimpaired",       "git://github.com/tpope/vim-unimpaired.git"
@@ -203,6 +204,10 @@ vim_plugin_task "mustache" do
 end
 vim_plugin_task "vwilight" do
   sh "curl https://gist.github.com/raw/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087/vwilight.vim > colors/vwilight.vim"
+end
+
+vim_plugin_task "snippets" do
+  sh "git clone git://github.com/scrooloose/snipmate-snippets.git tmp/scrooloose-snipmate-snippets && cd tmp/scrooloose-snipmate-snippets && rake deploy_local"
 end
 
 desc "Update the documentation"

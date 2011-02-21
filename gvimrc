@@ -45,13 +45,20 @@ if has("gui_macvim")
   imap <D-8> <Esc>8gt
   map  <D-9> 9gt
   imap <D-9> <Esc>9gt
+
+  " Default font
+  set guifont=Monaco:h13
+
 endif
 
 " Start without the toolbar
 set guioptions-=T
 
+" Start without the scrollbar 
+set guioptions-=r
+
 " Default gui color scheme
-color ir_black
+color vividchalk 
 
 " ConqueTerm wrapper
 function StartTerm()
