@@ -63,6 +63,9 @@ set guioptions-=r
 " Default gui color scheme
 color vividchalk 
 
+" Set Color of Line Number col
+highlight LineNr guifg=#666688 guibg=#333355
+
 " ConqueTerm wrapper
 function StartTerm()
   execute 'ConqueTerm ' . $SHELL . ' --login'
@@ -209,6 +212,10 @@ call s:DefineCommand("touch", "Touch")
 call s:DefineCommand("rm", "Remove")
 call s:DefineCommand("e", "Edit")
 call s:DefineCommand("mkdir", "Mkdir")
+
+set wildchar=<Tab> wildmenu wildmode=full
+set wildcharm=<C-Z>
+nnoremap <F5> :b <C-Z>
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))
