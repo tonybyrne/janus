@@ -70,7 +70,7 @@ color vividchalk
 highlight LineNr guifg=#666688 guibg=#333355
 
 " Ditto for Verticl Split
-highlight VertSplit guifg=#333355 guibg=#333355
+" highlight VertSplit guifg=#333355 guibg=#333355
 
 " Highlight for Cursor Line
 highlight CursorLine guibg=#333355
