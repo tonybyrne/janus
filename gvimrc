@@ -1,4 +1,3 @@
-
 if has("gui_macvim")
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert
@@ -22,6 +21,8 @@ if has("gui_macvim")
 
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
+  imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
+
 
   " Command-][ to increase/decrease indentation
   vmap <D-]> >gv
@@ -52,19 +53,35 @@ if has("gui_macvim")
   " Default font
   set guifont=Monaco:h13
 
+  " Command-Option-ArrowKey to switch viewports
+  map <D-M-Up> <C-w>k
+  imap <D-M-Up> <Esc> <C-w>k
+  map <D-M-Down> <C-w>j
+  imap <D-M-Down> <Esc> <C-w>j
+  map <D-M-Right> <C-w>l
+  imap <D-M-Right> <Esc> <C-w>l
+  map <D-M-Left> <C-w>h
+  imap <D-M-Left> <C-w>h
+
+  " Adjust viewports to the same size
+  map <Leader>= <C-w>=
+  imap <Leader>= <Esc> <C-w>=
 endif
+
+" Don't beep
+set visualbell
 
 " Start without the toolbar
 set guioptions-=T
 
-" Start without the scrollbar 
+" Start without the scrollbar
 set guioptions-=r
 
 " No NERDTree scrollbar
 set guioptions-=L
 
 " Default gui color scheme
-color vividchalk 
+color vividchalk
 
 " Set Color of Line Number col
 highlight LineNr guifg=#666688 guibg=#333355
@@ -78,7 +95,7 @@ highlight CursorLine guibg=#333355
 " ConqueTerm wrapper
 function StartTerm()
   execute 'ConqueTerm ' . $SHELL . ' --login'
-  setlocal listchars=tab:\ \ 
+  setlocal listchars=tab:\ \
 endfunction
 
 " Project Tree
@@ -105,6 +122,12 @@ function s:CdIfDirectory(directory)
 
   if explicitDirectory
     exe "cd " . fnameescape(a:directory)
+  endif
+
+  " Allows reading from stdin
+  " ex: git diff | mvim -R -
+  if strlen(a:directory) == 0
+    return
   endif
 
   if directory
